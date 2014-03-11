@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/cygdrive/d/DRE/branches/2.8.x/DreDataAccess/Maps/MSSQL'
-let g:netrw_dirhist_2='/cygdrive/d/DRE/branches/2.8.x/Script/sql2012/25.142/DRE/sql_module'
-let g:netrw_dirhist_3='/cygdrive/d/DRE/branches/2.8.x/DreDataAccess'
-let g:netrw_dirhist_4='/home/liss/.ssh'
-let g:netrw_dirhist_5='/cygdrive/d/DRE/branches/2.8.x/DreDataAccess'
-let g:netrw_dirhist_6='/cygdrive/d/DRE/branches/2.8.x/DreDataAccess/Common'
-let g:netrw_dirhist_7='/home/liss/a.py'
-let g:netrw_dirhist_8='/home/liss/linux-2.6.11/include/linux'
-let g:netrw_dirhist_9='/cygdrive/d/DRE/branches/2.5.x/Script/MySQL'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/liss/nginx/html/wp-content/plugins/wp-business-intelligence-lite/install'
+let g:netrw_dirhist_2='/usr/src/linux-source-3.2.0/debian.master'
+let g:netrw_dirhist_3='/var/log/mysql'
+let g:netrw_dirhist_4='/tmp/tmp13nhdo'

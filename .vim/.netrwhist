@@ -1,2 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/liss/nginx/html/wp-content/plugins/wp-business-intelligence-lite/install'
+let g:netrw_dirhist_2='/usr/src/linux-source-3.2.0/debian.master'
+let g:netrw_dirhist_3='/var/log/mysql'
+let g:netrw_dirhist_4='/tmp/tmp13nhdo'
+let g:netrw_dirhist_5='/home/usb/util-linux/tools'
