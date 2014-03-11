@@ -36,25 +36,10 @@ set completeopt=longest,menu
 
 "CTags 
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-set tags+=/opt/liss/aimcpro1.5/tags
 set tags+=$HOME/.vim/tags/cpp
-set tags+=$HOME/.vim/tags/apl
-set tags+=$HOME/.vim/tags/acl
-set tags+=$HOME/.vim/tags/anf
-set tags+=$HOME/.vim/php/doc/tags
 
 " php runtimepath
-set runtimepath+=$HOME/.vim/php
 autocmd BufNewFile,Bufread *.ros,*.inc,*.php set keywordprg="help"
-
-"complete func
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType java set omnifunc=javacomplete#Complet
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 "OmniCpp complete
 let OmniCpp_NamespaceSearch = 1
@@ -90,13 +75,6 @@ map   <F8> :vert res +10<ENTER>
 imap  <F8> <ESC>:vert res +10<ENTER>
 map   <F9> :vert res -10<ENTER>
 imap  <F9> <ESC>:vert res -10<ENTER>
-
-"python complete
-let g:pydiction_location = '$HOME/.vim/after/ftplugin/pydiction/complete-dict'
-"let g:pydiction_menu_height = 20
-
-"dict complete
-"set dict=$HOME/.vim/after/ftplugin/pydiction/complete-dict
 
 "Record cursor position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
