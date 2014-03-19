@@ -22,7 +22,10 @@ set autoindent
 "set expandtab
 set tabstop=4
 set shiftwidth=4
-colorscheme desert
+set t_Co=256
+"colorscheme desert
+"colorscheme desert256
+colorscheme vombatidae
 filetype plugin indent on 
 
 "file format
