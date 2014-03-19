@@ -22,7 +22,6 @@ set autoindent
 "set expandtab
 set tabstop=4
 set shiftwidth=4
-set viminfo='1000,<10000
 colorscheme desert
 filetype plugin indent on 
 
@@ -82,3 +81,4 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 "mutt
 au BufRead /tmp/mutt-* set tw=72
+set tags+=$HOME/linux/tags
