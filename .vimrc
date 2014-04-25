@@ -63,6 +63,7 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_File_Fold_Auto_Close=1
 let Tlist_Auto_Open=0
 set updatetime=1000
+noremap <c-]> g<c-]>
 map <F2> : TlistOpen<CR>
 
 "winmanager
