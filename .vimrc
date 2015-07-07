@@ -18,6 +18,7 @@ set backup
 set hlsearch
 set number
 set history=1000
+set viminfo='1000,<800
 set autoindent
 "set expandtab
 set tabstop=4
