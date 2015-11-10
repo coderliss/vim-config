@@ -28,6 +28,8 @@ set t_Co=256
 "colorscheme desert256
 colorscheme vombatidae
 filetype plugin indent on 
+set clipboard=unnamed
+set pastetoggle=<F3>
 
 "file format
 set fileformats=unix,dos
