@@ -32,7 +32,7 @@ set clipboard=unnamed
 set pastetoggle=<F3>
 
 "file format
-set fileformats=unix,dos
+set fileformats=unix
 
 "keys
 set backspace=indent,eol,start
@@ -43,6 +43,10 @@ set completeopt=longest,menu
 "CTags 
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags+=$HOME/.vim/tags/cpp
+set tags=tags
+set tags+=../tags
+set tags+=../../tags
+set tags+=../../../tags
 
 " php runtimepath
 autocmd BufNewFile,Bufread *.ros,*.inc,*.php set keywordprg="help"
@@ -89,3 +93,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 "mutt
 au BufRead /tmp/mutt-* set tw=72
 set tags+=$HOME/linux/tags
+
+"python
+autocmd FileType python nmap <c-k> :silent !open dash://python2:<cword><cr>
+autocmd FileType python nmap <buffer> <c-r> :w<CR>:!/usr/bin/env python % <CR>
