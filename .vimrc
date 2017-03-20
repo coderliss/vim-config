@@ -97,3 +97,6 @@ set tags+=$HOME/linux/tags
 "python
 autocmd FileType python nmap <c-k> :silent !open dash://python2:<cword><cr>
 autocmd FileType python nmap <buffer> <c-r> :w<CR>:!/usr/bin/env python % <CR>
+autocmd FileType c nmap <c-k> :silent !open dash://C:<cword><cr>
+autocmd FileType cpp nmap <c-k> :silent !open dash://CPP:<cword><cr>
+autocmd FileType cc nmap <c-k> :silent !open dash://CPP:<cword><cr>
