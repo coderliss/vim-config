@@ -41,7 +41,7 @@ set backspace=indent,eol,start
 set completeopt=longest,menu
 
 "CTags 
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --exclude=*.js --exclude=*.sql --extra=+q .<CR>
 set tags+=$HOME/.vim/tags/cpp
 set tags=tags
 set tags+=../tags
