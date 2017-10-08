@@ -85,28 +85,41 @@ autocmd FileType c nmap <c-k> :silent !open dash://C:<cword><cr>
 autocmd FileType cpp nmap <c-k> :silent !open dash://CPP:<cword><cr>
 autocmd FileType cc nmap <c-k> :silent !open dash://CPP:<cword><cr>
 
-" YouCompleteMe
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'lyuts/vim-rtags'
 call vundle#end()
+
+" YouCompleteMe
+"let g:loaded_youcompleteme = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_enable_diagnostic_signs=0
 let g:ycm_extra_conf_globlist = ['.','../', '../../', '../../../', '../../../../', '../../../../../', '../../../../../../', '../../../../../../../']
-nnoremap gh :YcmCompleter GoToDeclaration<CR>
-nnoremap gi :YcmCompleter GoToDefinition<CR>
-nnoremap gf :YcmCompleter FixIt<CR>
-"nnoremap <c-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
-"nnoremap <c-t> <c-o>
+function! s:setup_ycm()
+   nnoremap gh :YcmCompleter GoToDeclaration<CR>
+   nnoremap gi :YcmCompleter GoToDefinition<CR>
+   nnoremap gf :YcmCompleter FixIt<CR>
+   nnoremap <c-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+   nnoremap <c-t> <c-o>
+endfunction
 
 "rtags
 let g:rtagsUseDefaultMappings = 0 
-nnoremap gr :call rtags#FindRefs()<CR>
-noremap <F5> :call rtags#ReindexFile()<CR>
 let g:rtagsRcCmd = 'rc --socket-file=/$HOME/.rdm'
-cnoreabbrev rename call rtags#RenameSymbolUnderCursor()<CR>
-nnoremap <c-]> :call rtags#JumpTo(g:SAME_WINDOW)<CR>
-nnoremap <c-t> :call rtags#JumpBack()<CR>
+function! s:setup_rtags()
+   nnoremap gr :call rtags#FindRefs()<CR>
+   nnoremap gc :call rtags#FindSubClasses()<CR>
+   nnoremap gC :call rtags#FindSuperClasses()<CR>
+   nnoremap gv :call rtags#FindVirtuals()<CR>
+   noremap <F5> :call rtags#ReindexFile()<CR>
+   cnoreabbrev rename call rtags#RenameSymbolUnderCursor()<CR>
+   nnoremap gh :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
+   nnoremap <c-]> :call rtags#JumpTo(g:SAME_WINDOW)<CR>
+   nnoremap <c-t> :call rtags#JumpBack()<CR>
+endfunction
 
+autocmd FileType cpp call s:setup_rtags()
+autocmd FileType c call s:setup_rtags()
+autocmd FileType python call s:setup_ycm()
