@@ -1,0 +1,47 @@
+diff --git a/python/ycm/vimsupport.py b/python/ycm/vimsupport.py
+index 02565bc7..3fcb0d11 100644
+--- a/python/ycm/vimsupport.py
++++ b/python/ycm/vimsupport.py
+@@ -401,7 +401,7 @@ def GetVimCommand( user_command, default = 'edit' ):
+ 
+ 
+ # Both |line| and |column| need to be 1-based
+-def JumpToLocation( filename, line, column ):
++def JumpToLocation_bak( filename, line, column ):
+   # Add an entry to the jumplist
+   vim.command( "normal! m'" )
+ 
+@@ -440,6 +440,33 @@ def JumpToLocation( filename, line, column ):
+   # Center the screen on the jumped-to location
+   vim.command( 'normal! zz' )
+ 
++def JumpToLocation( filename, line, column ):
++  # Using this instead of the tempfile module because Windows won't read
++  # from a file not yet written to disk
++  tmp_filename = vim.eval('tempname()')
++  # YCM doesn't retun the identifier on which it inferred the GoTo location
++  # so we guess that is the current word under the cursor
++  tagname = vim.eval( 'expand("<cword>")' )
++  content = '{0}\t{1}\t{2}'.format(tagname,
++      filename,
++      'call cursor({0}, {1})'.format(line, column))
++  # write location to temporary tagfile
++  with open(tmp_filename, 'w') as f:
++    f.write(content)
++
++  # add temp tagfile, jump to our tag, restore tags file and delete temp file
++  old_tags = GetVariableValue('&tags')
++  old_wildignore = GetVariableValue('&wildignore')
++  try:
++    # Clear wildignore to ensure tag file isn't ignored
++    SetVariableValue('&wildignore', '')
++    SetVariableValue('&tags', tmp_filename)
++    vim.command('tjump %s' % tagname)
++  finally:
++    SetVariableValue('&tags', old_tags)
++    SetVariableValue('&wildignore', old_wildignore)
++  os.unlink(tmp_filename)
++ 
+ 
+ def NumLinesInBuffer( buffer_object ):
+   # This is actually less than obvious, that's why it's wrapped in a function
