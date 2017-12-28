@@ -105,6 +105,7 @@ function! s:setup_ycm()
    nnoremap <c-]> :YcmCompleter GoToDefinitionElseDeclaration<CR>
    nnoremap <c-t> <c-o>
 endfunction
+nnoremap gf :YcmCompleter FixIt<CR>
 
 "rtags
 let g:rtagsUseDefaultMappings = 0 
