@@ -37,7 +37,7 @@ set fileformats=unix,dos
 set backspace=indent,eol,start
 
 "Complete type
-set completeopt=longest,menu
+set completeopt=preview,longest,menu
 
 "CTags {
     " This will look in the current directory for 'tags', and work up the tree towards root until one is found. 
@@ -97,6 +97,7 @@ call vundle#end()
 "let g:loaded_youcompleteme = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_enable_diagnostic_signs=0
+let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_extra_conf_globlist = ['.','../', '../../', '../../../', '../../../../', '../../../../../', '../../../../../../', '../../../../../../../']
 function! s:setup_ycm()
    nnoremap gh :YcmCompleter GoToDeclaration<CR>
