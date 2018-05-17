@@ -29,6 +29,8 @@ filetype plugin indent on
 set clipboard=unnamed
 set mouse=n
 set pastetoggle=<F3>
+set listchars=tab:>.
+set list
 
 "file format
 set fileformats=unix,dos
