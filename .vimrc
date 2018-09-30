@@ -62,7 +62,8 @@ noremap <c-]> g<c-]>
 map <F2> : TlistOpen<CR>
 
 "winmanager
-let g:winManagerWindowLayout='FileExplorer|TagList'
+"let g:winManagerWindowLayout='FileExplorer|TagList'
+let g:winManagerWindowLayout='TagList'
 map <F4> :WMToggle<CR>
 
 "csope
