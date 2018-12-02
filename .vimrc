@@ -113,7 +113,7 @@ nnoremap gf :YcmCompleter FixIt<CR>
 
 "rtags
 let g:rtagsUseDefaultMappings = 0 
-let g:rtagsRcCmd = 'rc --socket-file=/$HOME/.rdm'
+"let g:rtagsRcCmd = 'rc --socket-file=/$HOME/.rdm'
 function! s:setup_rtags()
    nnoremap gr :call rtags#FindRefs()<CR>
    nnoremap gc :call rtags#FindSubClasses()<CR>
