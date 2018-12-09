@@ -4,6 +4,10 @@
 " Maintainer:   Michal Svec <msvec@suse.cz>
 " Last change:  20.8.2003
 
+" We shouldn't insert tabs
+" https://bugzilla.opensuse.org/show_bug.cgi?id=900839
+set expandtab
+
 if version < 600
   syntax clear
 elseif exists("b:current_syntax")
