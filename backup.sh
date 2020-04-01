@@ -1,7 +1,7 @@
 #!/bin/bash
 
-rm -rf .vim .vimrc
-cp -r $HOME/.vim $HOME/.vimrc .
+rm -rf ccls/.vim ccls/.vimrc
+cp -r $HOME/.vim $HOME/.vimrc ccls
 git add --all
 if [[ -z $1 ]] ; then
 	git commit -m "auto management"
