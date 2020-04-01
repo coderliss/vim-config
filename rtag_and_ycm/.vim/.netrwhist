@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/git/msp/WTS/WTSNMP/agents/netsnmpagent/snmpalarms/src/srcquick'
+let g:netrw_dirhist_2='/opt/miep/etc/scripting'
+let g:netrw_dirhist_3='/tmp/cmake_build/PAL/PALFB/PALMEMPOOL/CMakeFiles/PALMEMPOOL.dir'
