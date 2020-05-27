@@ -31,6 +31,12 @@ set clipboard=unnamed
 set pastetoggle=<F3>
 set listchars=tab:>.
 "set list
+set encoding=utf-8
+
+
+" Show trailing whitepace and spaces before a tab:
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 "file format
 set fileformats=unix,dos
